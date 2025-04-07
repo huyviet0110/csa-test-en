@@ -1607,6 +1607,251 @@ const quizData = [
         explanation:
             "In most cases in OutSystems, the order of joins does not impact the logic or output of the Aggregate.",
     },
+
+    {
+        question:
+            "Consider the following Server Action. What happens if the GetEmployeeById Aggregate does not return any record?",
+        type: "single",
+        options: [
+            "The module's global exception handler is executed.",
+            "The DatabaseException flow is executed.",
+            "The RecordNotFound flow is executed.",
+            "No exception flow is executed.",
+        ],
+        correct: [2],
+        explanation:
+            "If no record is returned by the aggregate, the RecordNotFound flow is executed to handle the missing data.",
+    },
+    {
+        question:
+            "Consider an Aggregate with the Fetch property set to Only On Demand. When does that Aggregate run?",
+        type: "single",
+        options: [
+            "Programmatically, using a Refresh Data node in a Screen Action.",
+            "Automatically, when the Aggregates set to run 'At Start' finish.",
+            "Automatically, when the Screen is initializing.",
+            "Programmatically, using a Server Action.",
+        ],
+        correct: [0],
+        explanation:
+            "An aggregate with 'Only On Demand' will run programmatically when you use a Refresh Data node in a Screen Action.",
+    },
+    {
+        question: "In Rich Widgets, the List_Navigation widget ...",
+        type: "single",
+        options: [
+            "Is a navigator for a Form with multiple pages, showing a defined number of elements per page.",
+            "Is a navigator for a Table Records with multiple pages, showing a defined number of elements per page.",
+        ],
+        correct: [1],
+        explanation:
+            "The List_Navigation widget is used to navigate through multiple pages of Table Records, displaying a specified number of items per page.",
+    },
+    {
+        question: "A Block can be used...",
+        type: "single",
+        options: [
+            "Inside Screens and Blocks, except on itself.",
+            "Only inside other Blocks.",
+            "Inside Screens and Blocks, including itself.",
+            "Only inside other Screens.",
+        ],
+        correct: [0],
+        explanation:
+            "Blocks can be used inside other Screens or Blocks, but not inside themselves.",
+    },
+    {
+        question:
+            "Style classes can be overridden, so if you have the same style class defined in a Web Block, a Screen, and the Theme, which definition is applied?",
+        type: "single",
+        options: [
+            "The one in the UI Flow.",
+            "The one in the Theme.",
+            "The one in the Web Block.",
+            "The one in the Screen.",
+        ],
+        correct: [3],
+        explanation:
+            "If a style class is defined in multiple places, the one in the Screen has the highest priority and will be applied.",
+    },
+    {
+        question:
+            "When deleting a record from an Entity, it deletes all records of an Entity with foreign key references. In this case, what is the Delete Rule in use?",
+        type: "single",
+        options: ["Delete", "Protect", "Ignore"],
+        correct: [0],
+        explanation:
+            "The Delete rule is used when deleting records that are referenced by foreign keys, ensuring that related records are also deleted.",
+    },
+    {
+        question: "Which of the following is not an Entity Action of the Customer Entity?",
+        type: "single",
+        options: ["UpdateCustomer.", "RetrieveCustomer.", "CreateCustomer.", "DeleteCustomer."],
+        correct: [1],
+        explanation:
+            "RetrieveCustomer is not an Entity Action by default. It might be part of custom logic but is not automatically provided.",
+    },
+    {
+        question: "Which HTTP request method does the Submit method use?",
+        type: "single",
+        options: ["GET", "POST", "PATCH", "PUT"],
+        correct: [1],
+        explanation:
+            "The Submit method typically uses the POST HTTP method to send data to the server.",
+    },
+    {
+        question: "Regarding Screen lifecycle, which of the following options is true?",
+        type: "single",
+        options: [
+            "Ajax submit, the preparation action will be reloaded",
+            "Ajax submit, the preparation action will not be reloaded",
+            "IsLoadingScreen() will return true when using ajax reload to reload a portion of the screen's html",
+            "IsLoadingScreen() will return false during the preparation step without starting to build screen html",
+        ],
+        correct: [1],
+        explanation:
+            "When using Ajax submit, the preparation action is not reloaded unless explicitly triggered.",
+    },
+    {
+        question: "A Structure can have attributes of the following data types:",
+        type: "single",
+        options: [
+            "Basic, Structure, Entity, and List",
+            "Basic and List only",
+            "Basic, Complex, and Record",
+            "Basic, String, and Object",
+        ],
+        correct: [0],
+        explanation:
+            "Structures can have attributes of basic types, other structures, entities, and lists.",
+    },
+
+    {
+        question:
+            "Consider a Screen that contains a Form to collect Customer data. The Form has a Save Button with the On Click Destination set to a SaveOnClick Action, which sends the data to the server to store it in the database. What is the best way to make sure that we do not send the data to the server when the mandatory Customer data fields have not been filled in?",
+        type: "single",
+        options: [
+            "Just set the Built-in validations of the Save button to Yes.",
+            "Set the Built-in validations of the Save button to Yes and add an Exception Handler flow to handle invalid inputs.",
+            "Set the Built-in validations of the Save button to Yes and check if the Form's Valid property is True.",
+            "Perform custom validations for all inputs. If one fails, set the Valid property of the Form to False.",
+        ],
+        correct: [2],
+        explanation:
+            "To prevent sending data to the server when mandatory fields are not filled, use the 'Valid' property of the Form and check if it's True.",
+    },
+    {
+        question: "Which of the following options is correct regarding Client Variables?",
+        type: "single",
+        options: [
+            "Lists or Binary Data can also be stored on Client Variables.",
+            "The value of a Client Variable is shared among all logged-in users.",
+            "Client Variables are useful to cache frequently accessed information.",
+            "Client Variables should be used to store confidential information.",
+        ],
+        correct: [2],
+        explanation:
+            "Client Variables are designed to cache frequently accessed information on the client side, improving performance.",
+    },
+    {
+        question: "Regarding Web Blocks in Outsystems, select the statement that is true.",
+        type: "single",
+        options: [
+            "You can instantiate Web Blocks on Web Screens and external HTML pages, by adding a special html tag.",
+            "You can instantiate Web Blocks only on Web Screens.",
+            "You can instantiate Web Blocks on Screen Actions.",
+            "You can instantiate Web Blocks on Web Screens and other Web Blocks.",
+        ],
+        correct: [3],
+        explanation:
+            "Web Blocks can be instantiated in Web Screens and also inside other Web Blocks for modular UI design.",
+    },
+    {
+        question: "A Web Block can be used",
+        type: "single",
+        options: [
+            "Inside Web Screens and Web Blocks, even on itself.",
+            "Inside Web Screens and Web Blocks, except on itself.",
+        ],
+        correct: [1],
+        explanation:
+            "Web Blocks can be used inside other Web Screens and Web Blocks, but not inside themselves to avoid infinite recursion.",
+    },
+    {
+        question: "The recommended data types for Session Variables are...",
+        type: "single",
+        options: [
+            "Basic and Entity Types.",
+            "Basic and Structures Types.",
+            "Any data type can be used.",
+            "Basic and Entity Identifier Types.",
+        ],
+        correct: [0],
+        explanation:
+            "Session Variables are best suited for basic types and entity types, as they need to be easily serialized.",
+    },
+    {
+        question: "Client Actions and Server Actions can have the following variables:",
+        type: "single",
+        options: [
+            "Output Parameters and Local Variables, but no Input Parameters.",
+            "Input Parameters and Local Variables, but no Output Parameters.",
+            "Input and Output Parameters, but no Local variables.",
+            "Input and Output Parameters, as well as Local Variables.",
+        ],
+        correct: [3],
+        explanation:
+            "Client and Server Actions can have input and output parameters along with local variables for handling logic within the action.",
+    },
+    {
+        question: "It is possible to see the SQL generated by an Aggregate?",
+        type: "single",
+        options: ["FALSE", "TRUE"],
+        correct: [1],
+        explanation:
+            "Yes, in OutSystems, you can see the SQL generated by an Aggregate using the 'Show SQL' option in the Aggregate editor.",
+    },
+    {
+        question:
+            "When a Form is submitted, what are the built-in validations that Outsystems performs?",
+        type: "single",
+        options: [
+            "If the data submitted by the user matches the data type of the Source Record of the Form.",
+            "If the data submitted by the user matches the data type of the variables associated with the respective Inputs.",
+            "If the Mandatory fields are filled in.",
+            "If the Mandatory fields are filled in and if the data submitted by the user matches the data type of the variables associated Inputs.",
+        ],
+        correct: [3],
+        explanation:
+            "OutSystems performs built-in validations for mandatory fields and correct data types when the form is submitted.",
+    },
+    {
+        question: "In OutSystems, how do we restrict access to a Screen?",
+        type: "single",
+        options: [
+            "In the Screen Properties, untick roles to restrict their access.",
+            "Use the CheckRole Action.",
+            "Go to the Users application and associate the Screen to a specific role.",
+            "We don't. Only users with a username and password can access.",
+        ],
+        correct: [2],
+        explanation:
+            "In OutSystems, access to Screens is controlled by roles, which can be assigned through the Users application.",
+    },
+    {
+        question:
+            "A Theme defines the look and feel of application Screens and you can directly apply it to ...",
+        type: "single",
+        options: [
+            "Only the Module.",
+            "A Module, a UI Flow, or an individual Screen.",
+            "A Module, a UI Flow, or an individual Screen or Web Block.",
+            "A Module or a UI Flow.",
+        ],
+        correct: [2],
+        explanation:
+            "A Theme can be applied to a Module, UI Flow, individual Screen, or Web Block in OutSystems to maintain consistent styling across the application.",
+    },
 ];
 
 const QUESTIONS_PER_PAGE = 10;
